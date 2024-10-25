@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "SeminarDAM"
 include(":app")
 include(":app:seminar3")
+include(":app:seminar4")
