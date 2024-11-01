@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SeminarDAM">
         <activity
+            android:name=".ListaInsule"
+            android:exported="false" />
+        <activity
             android:name=".FormularAdaugare"
             android:exported="false" />
         <activity
