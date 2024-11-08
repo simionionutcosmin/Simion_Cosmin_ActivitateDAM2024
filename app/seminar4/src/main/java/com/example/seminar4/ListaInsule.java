@@ -2,10 +2,13 @@ package com.example.seminar4;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -14,6 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.List;
 
 public class ListaInsule extends AppCompatActivity {
+
+    private List<Insula> insule = null;
+    private int idModificat = 0;
+    private AdapterInsula adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +36,29 @@ public class ListaInsule extends AppCompatActivity {
         Intent it = getIntent();
         List<Insula> insule = it.getParcelableArrayListExtra("insule");
 
+
         ListView lv = findViewById(R.id.LVinsule);
-        ArrayAdapter<Insula> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,insule);
+        adapter = new AdapterInsula(insule, getApplicationContext(), R.layout.layout_listview);
         lv.setAdapter(adapter);
 
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intentModifica = new Intent(getApplicationContext(), FormularAdaugare.class);
+                intentModifica.putExtra("insula", insule.get(i));
+                idModificat = i;
+                startActivityForResult(intentModifica, 209);
+                Toast.makeText(getApplicationContext(), insule.get(i).toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 209) {
+            insule.set(idModificat, data.getParcelableExtra("insula"));
+            adapter.notifyDataSetChanged();
+        }
     }
 }
