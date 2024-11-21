@@ -9,6 +9,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SeminarDAM">
         <activity
+            android:name=".WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListaImagini"
+            android:exported="false" />
+        <activity
+            android:name=".ImagineAdapter"
+            android:exported="false" />
+        <activity
             android:name=".ListaInsule"
             android:exported="false" />
         <activity

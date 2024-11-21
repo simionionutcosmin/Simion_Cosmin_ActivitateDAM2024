@@ -49,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        Button imagini = findViewById(R.id.button4);
+        imagini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(), ListaImagini.class);
+                startActivity(it);
+
+            }
+        });
 
 
 
