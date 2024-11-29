@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SeminarDAM">
         <activity
+            android:name=".InteractiuneJson"
+            android:exported="false" />
+        <activity
             android:name=".WebViewActivity"
             android:exported="false" />
         <activity

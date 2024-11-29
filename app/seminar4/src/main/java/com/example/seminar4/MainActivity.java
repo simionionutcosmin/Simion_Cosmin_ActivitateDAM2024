@@ -58,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        Button json = findViewById(R.id.button5);
+        json.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(getApplicationContext(), InteractiuneJson.class);
+                startActivity(it);
+
+            }
+        });
 
 
 
