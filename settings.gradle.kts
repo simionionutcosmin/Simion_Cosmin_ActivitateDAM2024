@@ -21,5 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Seminar_2"
 include(":app")
-include(":app:seminar3")
-include(":app:seminar4")

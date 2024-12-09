@@ -1,8 +1,6 @@
 package com.example.seminar_2;
 
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity3 extends AppCompatActivity {
