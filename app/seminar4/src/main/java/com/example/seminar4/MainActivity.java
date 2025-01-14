@@ -76,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button btnTest=findViewById(R.id.button6);
+        btnTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it =new Intent(getApplicationContext(), FormularAdaugare.class);
+                startActivity(it);
+            }
+        });
+
 
 
 
